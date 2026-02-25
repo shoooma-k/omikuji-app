@@ -1,0 +1,15 @@
+<section id="pull-page" data-controller="omikujis" data-omikujis-image-value="<%= asset_path('OmikujiHuda36KB.jpg') %>">
+  <div class="page-title">
+    <%= image_tag "OmikujiwoHiku.png" %>
+    <h3>おみくじを引く</h3>
+    <p>DRAW A FORTUNE</p>
+  </div>
+  <p>心を静めて、今のご神託をいただきましょう。この一枚のおみくじは、偶然ではなく必然の導き。今日の歩みを照らす小さな光となりますように。</p>
+  <div id="omikuji-container">
+  </div>
+  <div id="add-omikuji" class="pull-omikuji is-visible" data-action="click->omikujis#add">
+    <div>
+      <p>おみくじを追加する</p>
+    </div>
+  </div>
+</section>

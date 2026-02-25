@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
+  get "omikujis/index" => "omikujis#index"
+  get "omikujis/show" => "omikujis#show"
+
   get "/" => "home#top"
   get "about" => "home#about"
-  
-  get "pull/new"
-  get "users/new" => "users#new"
-
-  get "omikuji/pull" => "omikuji#pull"
 
   
-  
-
 end

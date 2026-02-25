@@ -1,26 +1,28 @@
-    <section id="home-page">
-      <div id="title">
-        <img src="MIkujinoyasiro_logo.png">
-        <h2>みくじの社</h2>
-        <h3>MIKUJI - NO - YASIRO</h3>
-        <div id="subtitle-container">
-          <p>今日をひらく</p>
-          <img src="MuryouOmikuji.png">
-          <p>小さなご神託</p>
-        </div>
-      </div>
+<section id="home-page">
+  <div id="title">
+    <%= image_tag "MIkujinoyasiro_logo.png" %>
+    <h2>みくじの社</h2>
+    <h3>MIKUJI - NO - YASIRO</h3>
+    <div id="subtitle-container">
+      <p>今日をひらく</p>
+      <%= image_tag "MuryouOmikuji.png" %>
+      <p>小さなご神託</p>
+    </div>
+  </div>
 
-      <div class="circle-container" data-controller="home">
-        <div class="circle circle1"></div>
-        <div id="hole" class="circle circle2">
-          <!-- <img src="OmikujiHuda36KB.jpg"> -->
-        </div>
-        <div class="circle circle3"></div>
-      </div>
+  <div class="circle-container" data-controller="home" data-home-image-value="<%= asset_path('OmikujiHuda36KB.jpg') %>">
+    <div class="circle circle1"></div>
+    <div id="hole" class="circle circle2">
+      <!-- <ここに画像が入る> -->
+    </div>
+    <div class="circle circle3"></div>
+  </div>
 
-      <div class="pull-omikuji">
-        <div>
-          <p>おみくじを引く</p>
-        </div>
+  <%= link_to("/omikujis/index") do %>
+    <div class="pull-omikuji">
+      <div>
+        <p>おみくじを引く</p>
       </div>
-    </section>
+    </div>
+  <% end %> 
+</section>

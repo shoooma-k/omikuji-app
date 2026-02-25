@@ -27,10 +27,16 @@ header {
   grid-template-rows: 60px;
 }
 
+.home-link {
+  color: #fff;
+  text-decoration: none;
+}
+
 #home {
   background: #cc3838;
   align-items: center;
   flex-direction: column-reverse;
+  padding-bottom: 4px;
 }
 
 #home img {
@@ -38,6 +44,7 @@ header {
   margin: 0 auto;
   width: 40px;
   height: 40px;
+  padding-top: 4px;
 }
 
 .txt-home {
@@ -287,6 +294,11 @@ main {
   cursor: pointer;
 }
 
+#home-page a {
+  text-decoration: none;
+  color: inherit;
+}
+
 #home-page .pull-omikuji>div {
   margin: 0 auto;
   width: 200px;
@@ -314,6 +326,7 @@ main {
 /* おみくじを引くページ */
 #pull-page {
   text-align: center;
+  color: #fff;
 }
 
 .page-title {
