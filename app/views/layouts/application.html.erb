@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Omikuji App" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Omikuji App">
+    <meta name="mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
+    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body data-controller="menu">
+    <header>
+      <div id="home">
+        <%= link_to("/") do %>
+          <img src="MIkujinoyasiro_logo.png">
+        <% end %>
+        <div class="txt-home">HOME</div>
+      </div>
+      <div id="center-header">
+        <h2>みくじの社</h2>
+      </div>
+      <div id="nav-toggle" data-action="click->menu#toggle">
+        <div class="menu-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="txt-menu">MENU</div>
+      </div>
+    </header>
+
+    <div id="menu-container">
+      <ul>
+        <li>
+          <%= link_to("/about") do %>
+            <span class="menu-item">
+              <img src="MIkujinoyasiro_logo.png">
+              <div>
+                <h3>みくじの社について</h3>
+                <p>ABOUT OMIKUJI-NO-YASIRO</p>
+              </div>
+            </span>
+          <% end %>
+        </li>
+        <li class="pull-omikuji">
+          <%= link_to("/about") do %>
+            <span class="menu-item">
+              <img src="OmikujiwoHiku.png">
+              <div>
+                <h3>おみくじを引く</h3>
+                <p>DRAW A FORTUNE</p>
+              </div>
+            </span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/about") do %>
+            <span class="menu-item">
+              <img src="OmikujiMusubidokoro.png">
+              <div>
+                <h3>おみくじ結び所</h3>
+                <p>KNOTTING THE FORTUNE</p>
+              </div>
+            </span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to("/about") do %>
+            <span class="menu-item">
+              <img src="Osirase.png">
+              <div>
+                <h3>お知らせ</h3>
+                <p>INFORMATION</p>
+              </div>
+            </span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+
+
+
+    <%= yield %>
+  </body>
+</html>
