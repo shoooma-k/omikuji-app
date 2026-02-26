@@ -10,5 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 0) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_26_150935) do
+  create_table "omikujis", force: :cascade do |t|
+    t.text "advice"
+    t.string "ally"
+    t.string "business"
+    t.string "charm"
+    t.string "color"
+    t.datetime "created_at", null: false
+    t.string "curse"
+    t.date "drawn_on"
+    t.string "fortune"
+    t.string "illness"
+    t.string "jinx"
+    t.string "love"
+    t.string "spot"
+    t.string "study"
+    t.string "travel"
+    t.datetime "updated_at", null: false
+    t.string "visitor"
+    t.string "void"
+    t.string "wish"
+  end
 end

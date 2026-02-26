@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static values = { image: String }
+  static values = { image: String, url: String }
   
   connect() {
     this.spawn()  }
@@ -17,6 +17,9 @@ export default class extends Controller {
     
 
     for (let i = 0; i < 30; i++) {
+      const link = document.createElement("a")
+      link.href = this.urlValue
+
       const img = document.createElement("img");
       img.src = this.imageValue
 
@@ -24,8 +27,10 @@ export default class extends Controller {
       img.style.transform = `rotate(${angle}deg)`;
       img.classList.add("open-omikuji");
 
+      link.appendChild(img)
+
       setTimeout(() => {
-        omikujiContainer.appendChild(img);
+        omikujiContainer.appendChild(link);
         if (i === 29) {
           addOmikuji.classList.remove("is-visible");
         }
