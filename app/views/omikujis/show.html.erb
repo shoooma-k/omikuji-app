@@ -1,4 +1,4 @@
-<section id="result-page" data-controller="omikujis-show">
+<section id="show-page" data-controller="omikujis-show">
   <div class="page-title">
     <%= image_tag "OmikujiMusubidokoro.png" %>
     <h3>おみくじの結果</h3>
@@ -13,43 +13,43 @@
         <%= image_tag "muryoumikuji_red.png" %>
       </div>
       <div id="result-fortune">
-        <!-- <div>大吉</div> -->
         <p>運勢</p>
+        <div><%= @omikuji.fortune %></div>
       </div>
       <div id="result-advice">
         <div>助言</div>
-        <!-- <p>今こそ前進するとき。強い想いがあるならば、過去を振り返らずに、前を見よ。</p> -->
+        <p><%= @omikuji.advice %></p>
         <span></span>
       </div>
       <div id="result-detail">
         <ul>
           <li id="result-wish">
             <p class="content">願事</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.wish %></p>
           </li>
           <li id="result-love">
             <p class="content">恋愛</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.love %></p>
           </li>
           <li id="result-visitor">
             <p class="content">待人</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.visitor %></p>
           </li>
           <li id="result-business">
             <p class="content">商売</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.business %></p>
           </li>
           <li id="result-travel">
             <p class="content">旅立</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.travel %></p>
           </li>
           <li id="result-study">
             <p class="content">学問</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.study %></p>
           </li>
           <li id="result-illness">
             <p class="content">病気</p>
-            <!-- <p class="import">多くを望まなければ必ず叶う。</p> -->
+            <p class="import"><%= @omikuji.illness %></p>
           </li>
         </ul>
       </div>
@@ -57,31 +57,31 @@
         <ul>
           <li id="result-charm">
             <p class="content">開運物</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.charm %></p>
           </li>
           <li id="result-spot">
             <p class="content">開運場所</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.spot %></p>
           </li>
           <li id="result-ally">
             <p class="content">開運人物</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.ally %></p>
           </li>
           <li id="result-color">
             <p class="content">開運色</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.color %></p>
           </li>
           <li id="result-curse">
             <p class="content">不運物</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.curse %></p>
           </li>
-          <li id="result-voide">
+          <li id="result-void">
             <p class="content">不運場所</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.void %></p>
           </li>
           <li id="result-jinx">
             <p class="content">不運人物</p>
-            <!-- <p class="import">漫画</p> -->
+            <p class="import"><%= @omikuji.jinx %></p>
           </li>
         </ul>
       </div>
@@ -97,9 +97,19 @@
     </div>
   </div>
 
-  <div id="record-omikuji" class="record-omikuji">
-    <div>
-      <p>おみくじを記録する</p>
+  <%= link_to("/omikujis/#{params[:id]}/destroy", data: { turbo_method: :post, turbo_confirm: "このおみくじを削除しますか？" }) do %>
+    <div id="record-omikuji" class="record-omikuji">
+      <div>
+        <p>おみくじを削除</p>
+      </div>
     </div>
-  </div>
+  <% end %>
+
+  <%= link_to("/omikujis/index") do %>
+    <div id="record-omikuji" class="record-omikuji">
+      <div>
+        <p>おみくじ結び所</p>
+      </div>
+    </div>
+  <% end %>
 </section>

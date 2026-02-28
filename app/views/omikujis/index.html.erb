@@ -1,15 +1,28 @@
-<section id="pull-page" data-controller="omikujis-index" data-omikujis-index-image-value="<%= asset_path('OmikujiHuda36KB.jpg') %>" data-omikujis-index-url-value="/omikujis/show">
-  <div class="page-title">
-    <%= image_tag "OmikujiwoHiku.png" %>
-    <h3>おみくじを引く</h3>
-    <p>DRAW A FORTUNE</p>
+<div class="page-title">
+    <%= image_tag "OmikujiMusubidokoro.png" %>
+    <h3>おみくじ結び所</h3>
+    <p>KNOTTING THE FORTUNE</p>
+</div>
+<div class="omikujis-index">
+  <div class="omikujis-container">
+    <% @omikujis.each do |omikuji| %>
+      <%= link_to ("/omikujis/#{omikuji.id}"), class: "omikuji-card" do %>
+        <div class="omikujis-index-item">
+          <div class="omikujis-outline">
+            <div class="omikuji-left">
+              <%= omikuji.fortune %>
+            </div>
+            <div class="omikuji-right">
+              <div class="omikuji-user-name">
+                <%= "加地　翔馬" %>
+              </div>
+              <div class="omikuji-created-at">
+                <%= omikuji.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <p>心を静めて、今のご神託をいただきましょう。この一枚のおみくじは、偶然ではなく必然の導き。今日の歩みを照らす小さな光となりますように。</p>
-  <div id="omikuji-container">
-  </div>
-  <div id="add-omikuji" class="pull-omikuji is-visible" data-action="click->omikujis-index#add">
-    <div>
-      <p>おみくじを追加する</p>
-    </div>
-  </div>
-</section>
+</div>

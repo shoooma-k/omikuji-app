@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
-  resources :omikujis, only: [:index]
-
+  get "omikujis/select" => "omikujis#select"
+  get "omikujis/result" => "omikujis#result"
   get "omikujis/index" => "omikujis#index"
-  get "omikujis/show" => "omikujis#show"
+  get "omikujis/:id" => "omikujis#show"
+  post "omikujis/:id/destroy" => "omikujis#destroy"
 
+  
   get "/" => "home#top"
   get "about" => "home#about"
 end

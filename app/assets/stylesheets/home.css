@@ -586,11 +586,17 @@ main {
   font-size: 12px;
 }
 
-#result-page #record-omikuji {
+#record-omikuji {
   margin: 50px auto;
 }
 
-#result-page .record-omikuji {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.record-omikuji {
   margin: 0 auto;
   width: 220px;
   height: 50px;
@@ -601,7 +607,7 @@ main {
   cursor: pointer;
 }
 
-#result-page .record-omikuji>div {
+.record-omikuji>div {
   margin: 0 auto;
   width: 220px;
   height: 40px;
@@ -612,14 +618,15 @@ main {
   cursor: pointer;
 }
 
-#result-page .record-omikuji p {
+.record-omikuji p {
   font-size: 20px;
   margin: 0;
   text-align: center;
   letter-spacing: .1em;
+  color: #fff;
 }
 
-#result-page .record-omikuji>div:hover {
+.record-omikuji>div:hover {
   background: rgba(255, 255, 255, 0.171);
   border-top: 5px solid #fff;
   border-bottom: 5px solid #fff;
@@ -630,3 +637,68 @@ main {
   color: #fff;
   margin: 0 40px 0;
 }
+
+
+/* おみくじの一覧ページ */
+.page-title {
+  color: #fff;
+}
+
+.omikujis-index a {
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+.omikujis-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.omikuji-card {
+  cursor: pointer;
+}
+
+.omikujis-index-item {
+  background: #fff;
+  display: flex;
+  margin: 10px;
+}
+
+.omikujis-outline {
+  display: flex;
+  width: 100%;
+  margin: 15px;
+  border: solid 2px rgba(225, 0, 0, 0.825);
+  outline: 5px solid rgba(225, 0, 0, 0.825);
+  outline-offset: 4px;
+}
+
+.omikuji-left {
+  display: flex;
+  width: 67.5px;
+  height: 67.5px;
+  border-radius: 50%;
+  background: rgba(225, 0, 0, 0.825);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  font-size: 24px;
+}
+
+.omikuji-right {
+    justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.omikuji-user-name {
+  font-size: 24px;
+  color:rgba(0, 0, 0, 0.777);
+}
+
+.omikuji-created-at {
+  color: rgba(169, 0, 0, 0.825);
+}
+

@@ -1,0 +1,109 @@
+<section id="result-page" data-controller="omikujis-result">
+  <div class="page-title">
+    <%= image_tag "OmikujiMusubidokoro.png" %>
+    <h3>おみくじの結果</h3>
+    <p>KNOTTING THE FORTUNE</p>
+  </div>
+
+  <%= form_tag("omikujis/create") do %>
+    <div id="omikuji-paper">
+      <div>
+        <div id="result-top">
+          <%= image_tag "Mikujinoyasiro_log_red.png" %>
+          <h1>みくじの社</h1>
+          <%= image_tag "muryoumikuji_red.png" %>
+        </div>
+        <div id="result-fortune">
+          <p>運勢</p>
+          <div><%= @omikuji.fortune %></div>
+        </div>
+        <div id="result-advice">
+          <div>助言</div>
+          <p><%= @omikuji.advice %></p>
+          <span></span>
+        </div>
+        <div id="result-detail">
+          <ul>
+            <li id="result-wish">
+              <p class="content">願事</p>
+              <p class="import"><%= @omikuji.wish %></p>
+            </li>
+            <li id="result-love">
+              <p class="content">恋愛</p>
+              <p class="import"><%= @omikuji.love %></p>
+            </li>
+            <li id="result-visitor">
+              <p class="content">待人</p>
+              <p class="import"><%= @omikuji.visitor %></p>
+            </li>
+            <li id="result-business">
+              <p class="content">商売</p>
+              <p class="import"><%= @omikuji.business %></p>
+            </li>
+            <li id="result-travel">
+              <p class="content">旅立</p>
+              <p class="import"><%= @omikuji.travel %></p>
+            </li>
+            <li id="result-study">
+              <p class="content">学問</p>
+              <p class="import"><%= @omikuji.study %></p>
+            </li>
+            <li id="result-illness">
+              <p class="content">病気</p>
+              <p class="import"><%= @omikuji.illness %></p>
+            </li>
+          </ul>
+        </div>
+        <div id="result-detail">
+          <ul>
+            <li id="result-charm">
+              <p class="content">開運物</p>
+              <p class="import"><%= @omikuji.charm %></p>
+            </li>
+            <li id="result-spot">
+              <p class="content">開運場所</p>
+              <p class="import"><%= @omikuji.spot %></p>
+            </li>
+            <li id="result-ally">
+              <p class="content">開運人物</p>
+              <p class="import"><%= @omikuji.ally %></p>
+            </li>
+            <li id="result-color">
+              <p class="content">開運色</p>
+              <p class="import"><%= @omikuji.color %></p>
+            </li>
+            <li id="result-curse">
+              <p class="content">不運物</p>
+              <p class="import"><%= @omikuji.curse %></p>
+            </li>
+            <li id="result-void">
+              <p class="content">不運場所</p>
+              <p class="import"><%= @omikuji.void %></p>
+            </li>
+            <li id="result-jinx">
+              <p class="content">不運人物</p>
+              <p class="import"><%= @omikuji.jinx %></p>
+            </li>
+          </ul>
+        </div>
+        <div id="result-bottom">
+          <div>
+            <%= image_tag "Mikujinoyasiro_log_red.png" %>
+            <h1>みくじの社</h1>
+            <%= image_tag "muryoumikuji_red.png" %>
+          </div>
+          <%= image_tag "OmikujiQR.png" %>
+          <p>https://shoooma-k.github.io/yasiro/</p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to "/omikujis/index" do %>
+    <div id="record-omikuji" class="record-omikuji">
+      <div>
+        <p>おみくじ結び所</p>
+      </div>
+    </div>
+  <% end %>
+</section>
