@@ -19,6 +19,7 @@ export default class extends Controller {
     for (let i = 0; i < 30; i++) {
       const link = document.createElement("a")
       link.href = this.urlValue
+      link.dataset.turboPrefetch = "false"
 
       const img = document.createElement("img");
       img.src = this.imageValue

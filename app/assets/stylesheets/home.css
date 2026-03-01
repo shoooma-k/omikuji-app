@@ -632,6 +632,14 @@ a {
   border-bottom: 5px solid #fff;
 }
 
+.record-omikuji-button{
+  background:none;
+  border:none;
+  padding:0;
+  width:100%;
+  cursor:pointer;
+}
+
 .home-about {
   text-align: center;
   color: #fff;

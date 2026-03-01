@@ -106,7 +106,9 @@ class OmikujisController < ApplicationController
   end
 
   def result
-    @omikuji = Omikuji.create(
+    Rails.logger.warn("==== RESULT ACTION CALLED ====")
+
+    @omikuji = Omikuji.new(
     fortune: FORTUNES.sample,
     advice: ADVICES.sample,
     wish: WISHES.sample,
@@ -134,9 +136,24 @@ class OmikujisController < ApplicationController
     @omikuji = Omikuji.find_by(id: params[:id])
   end
 
+  def create
+    @omikuji = Omikuji.new(omikuji_params)
+    @omikuji.save
+    redirect_to("/omikujis/index")
+  end
+
   def destroy
     @omikuji = Omikuji.find_by(id: params[:id])
     @omikuji.destroy
     redirect_to("/omikujis/index")
+  end
+
+  private
+
+  def omikuji_params
+    params.require(:omikuji).permit(
+      :fortune, :advice, :wish, :love, :visitor, :business, :travel, :study, :illness,
+      :charm, :spot, :ally, :color, :curse, :void, :jinx
+    )
   end
 end

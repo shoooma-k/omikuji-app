@@ -99,11 +99,28 @@
     </div>
   <% end %>
 
-  <%= link_to "/omikujis/index" do %>
-    <div id="record-omikuji" class="record-omikuji">
-      <div>
-        <p>おみくじ結び所</p>
+  <%= form_with model: @omikuji, url: "/omikujis/create", method: :post do |f| %>
+    <%= f.hidden_field :fortune %>
+    <%= f.hidden_field :advice %>
+    <%= f.hidden_field :wish %>
+    <%= f.hidden_field :love %>
+    <%= f.hidden_field :visitor %>
+    <%= f.hidden_field :business %>
+    <%= f.hidden_field :travel %>
+    <%= f.hidden_field :study %>
+    <%= f.hidden_field :illness %>
+    <%= f.hidden_field :charm %>
+    <%= f.hidden_field :spot %>
+    <%= f.hidden_field :ally %>
+    <%= f.hidden_field :color %>
+    <%= f.hidden_field :curse %>
+    <%= f.hidden_field :void %>
+    <%= f.hidden_field :jinx %>
+
+    <button type="submit" class="record-omikuji-button">
+      <div id="record-omikuji" class="record-omikuji">
+        <div><p>おみくじ結び所</p></div>
       </div>
-    </div>
+    </button>
   <% end %>
 </section>
