@@ -1,0 +1,24 @@
+<section class="users-show-page">
+  <div class="page-title">
+    <%= image_tag "OmikujiMusubidokoro.png" %>
+    <h3>ユーザー詳細</h3>
+    <p>USER DETAILS</p>
+  </div>
+
+  <div class="users-show-sheet">
+    <div class="users-outline">
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <%= link_to("編集", "/users/#{@user.id}/edit") %>
+    </div>
+  </div>
+
+  <%= link_to("/users/index") do %>
+    <div class="omikuji-botton-default">
+      <div>
+        <p>ユーザー一覧</p>
+      </div>
+    </div>
+  <% end %>
+
+</section>

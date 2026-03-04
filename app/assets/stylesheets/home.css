@@ -22,12 +22,14 @@ body {
 header {
   display: grid;
   padding: 0;
-  margin: 0;
-  grid-template-columns: 60px 1fr 60px;
+  margin-bottom: 20px;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   grid-template-rows: 60px;
 }
 
 .home-link {
+  justify-self: start;
   color: #fff;
   text-decoration: none;
 }
@@ -36,7 +38,7 @@ header {
   background: #cc3838;
   align-items: center;
   flex-direction: column-reverse;
-  padding-bottom: 4px;
+  padding: 6px;
 }
 
 #home img {
@@ -55,22 +57,58 @@ header {
 
 
 #center-header {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.center-header-group {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
 }
 
 #center-header h2 {
+  position: static;
+  transform: none;
   margin: 0;
   padding: 0;
   font-size: 24px;
   text-align: center;
   color: #fff;
   letter-spacing: .3em;
+  grid-column: 2;
 }
 
+.right-header {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-command-container {
+  display: flex;
+  gap: 16px;
+  justify-self: end;
+}
+
+.user-command-container p {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+.user-command-container a {
+  margin: 0;
+  color: #fff;
+  font-size: 12px;
+}
 
 #nav-toggle {
+  justify-self: end;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -112,6 +150,20 @@ header {
 
 #nav-toggle.is-open .menu-bar span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+.flash {
+  padding: 5px 0;
+  color: white;
+  background: rgb(236, 75, 0);
+  text-align: center;
+  position: absolute;
+  top: 64px;
+  z-index: 10;
+  width: 100%;
+  border-radius: 0 0 2px 2px;
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 #menu-container {
@@ -283,7 +335,8 @@ main {
 }
 
 
-#home-page .pull-omikuji {
+
+.omikuji-botton-default {
   margin: 0 auto;
   width: 200px;
   height: 50px;
@@ -294,12 +347,14 @@ main {
   cursor: pointer;
 }
 
-#home-page a {
+
+.omikuji-botton-default a {
   text-decoration: none;
   color: inherit;
 }
 
-#home-page .pull-omikuji>div {
+
+.omikuji-botton-default>div {
   margin: 0 auto;
   width: 200px;
   height: 40px;
@@ -310,7 +365,8 @@ main {
   cursor: pointer;
 }
 
-#home-page .pull-omikuji p {
+
+.omikuji-botton-default p {
   font-size: 20px;
   margin: 0;
   text-align: center;
@@ -318,7 +374,8 @@ main {
   color: #fff;
 }
 
-#home-page .pull-omikuji>div:hover {
+
+.omikuji-botton-default>div:hover {
   background: rgba(255, 255, 255, 0.171);
   border-top: 5px solid #fff;
   border-bottom: 5px solid #fff;
@@ -632,12 +689,14 @@ a {
   border-bottom: 5px solid #fff;
 }
 
-.record-omikuji-button{
+.record-omikuji-button {
+  text-decoration: none;
   background:none;
   border:none;
   padding:0;
   width:100%;
   cursor:pointer;
+  font-family: inherit;
 }
 
 .home-about {
@@ -695,6 +754,13 @@ a {
   font-size: 24px;
 }
 
+.omikuji-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .omikuji-right {
     justify-content: center;
   align-items: center;
@@ -710,3 +776,122 @@ a {
   color: rgba(169, 0, 0, 0.825);
 }
 
+/* 新規登録ページ */
+
+.users-index-item {
+  background: #fff;
+  margin: 10px;
+  padding: 24px;
+  box-shadow: 16px 16px 12px rgba(0,0,0,0.15);
+}
+
+.users-outline {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%; 
+  border: solid 2px rgba(225, 0, 0, 0.825);
+  outline: 5px solid rgba(225, 0, 0, 0.825);
+  outline-offset: 4px;
+  margin: 0;
+  padding: 12px 24px 24px 24px;
+}
+
+
+.users-signup-sheet {
+  max-width: 600px;
+  margin: 20px auto 0;
+}
+
+.users-signup-sheet p {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.users-signup-sheet input {
+  display: block;
+}
+
+.users-signup-sheet input[type="text"],
+.users-signup-sheet input[type="email"],
+.users-signup-sheet input[type="password"],
+.users-signup-sheet input[name="name"],
+.users-signup-sheet input[name="email"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.users-new-page .omikuji-botton-default {
+  margin: 32px auto 0;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: .2px solid #fff;
+  cursor: pointer;
+}
+
+
+
+.users-new-page .omikuji-botton-default>div {
+  margin: 0 auto;
+  width: 200px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: .2px solid #fff;
+  cursor: pointer;
+}
+
+.omikuji-botton-default input[type="submit"]{
+  all: unset;
+  color: #fff;
+  font-size: 20px;
+  letter-spacing: .1em;
+  cursor: pointer;
+}
+
+.users-new-page .omikuji-botton-default>div:hover {
+  background: rgba(255, 255, 255, 0.171);
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+
+.users-show-sheet {
+  background: #fff;
+  margin: 20px auto 30px;
+  padding: 24px;
+  box-shadow: 16px 16px 12px rgba(0,0,0,0.15);
+  max-width: 400px;
+  text-align: center;
+}
+
+.users-show-sheet a:hover {
+  opacity: 0.5;
+}
+
+.form-error {
+  display: block;
+  margin: 16px auto;
+  max-width: 600px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgba(225, 0, 0, 0.825);
+  color: #c40000;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 9999;
+  position: relative;
+}

@@ -32,17 +32,38 @@
         </div>
       <% end %>
       <div id="center-header">
-        <h2>みくじの社</h2>
-      </div>
-      <div id="nav-toggle" data-action="click->menu#toggle">
-        <div class="menu-bar">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="center-header-group">
+          <h2>みくじの社</h2>
         </div>
-        <div class="txt-menu">MENU</div>
+      </div>
+      <div class="right-header">
+        <div class="user-command-container">
+          <% if @current_user %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+            <%= link_to("ユーザー一覧", "/users/index") %>
+            <%= link_to "ログアウト", "/logout", data: { turbo_method: :post } %>
+          <% else %>
+            <%= link_to("新規登録", "/signup") %>
+            <%= link_to("ログイン", "/login") %>
+          <% end %>
+        </div>
+        <div id="nav-toggle" data-action="click->menu#toggle">
+          <div class="menu-bar">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="txt-menu">MENU</div>
+        </div>
       </div>
     </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
 
     <div id="menu-container">
       <ul>

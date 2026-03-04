@@ -1,0 +1,27 @@
+<section class="users-index-page">
+  <div class="page-title">
+    <%= image_tag "OmikujiMusubidokoro.png" %>
+    <h3>ユーザー一覧</h3>
+    <p>KNOTTING THE FORTUNE</p>
+  </div>
+  <div class="omikujis-index">
+    <div class="omikujis-container">
+      <% @users.each do |user| %>
+        <%= link_to ("/users/#{user.id}"), class: "omikuji-card" do %>
+          <div class="omikujis-index-item">
+            <div class="omikujis-outline">
+              <div class="omikuji-left">
+                <%= image_tag "/user_images/#{user.image_name}" %>
+              </div>
+              <div class="omikuji-right">
+                <div class="omikuji-user-name">
+                  <%= user.name %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

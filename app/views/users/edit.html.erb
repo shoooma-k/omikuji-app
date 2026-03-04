@@ -1,0 +1,25 @@
+<section class="users-edit-page">
+  <div class="page-title">
+    <%= image_tag "OmikujiMusubidokoro.png" %>
+    <h3>ユーザー一覧</h3>
+    <p>KNOTTING THE FORTUNE</p>
+  </div>
+      
+  <%= form_tag("/users/#{@user.id}/update", { multipart: true, class: "users-signup-sheet" }) do %>
+    <div class="users-show-sheet">
+      <div class="users-outline">
+        <p>お名前</p>
+        <input name="name" value="<%= @user.name %>" >
+        <p>画像</p>
+        <input name="image" type="file">
+        <p>宛先(e-mail)</p>
+        <input name="email" value="<%= @user.email %>" >
+      </div>
+    </div>
+    <div class="omikuji-botton-default">
+      <div>
+        <input type="submit" value="保存" >
+      </div>
+    </div>
+  <% end %>
+</section>
