@@ -1,24 +1,39 @@
-# README
+# Omikuji App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+おみくじを引いて結果を保存できるRailsアプリです。  
+ユーザー登録後、自分の引いたおみくじの履歴を確認できます。
 
-Things you may want to cover:
+---
 
-* Ruby version
+## 主な機能
 
-* System dependencies
+・ユーザー登録 / ログイン  
+・おみくじをランダムで生成  
+・おみくじ結果の表示  
+・結果をデータベースに保存  
+・おみくじ履歴の一覧表示  
 
-* Configuration
+---
 
-* Database creation
+## 使用技術
 
-* Database initialization
+・Ruby  
+・Ruby on Rails  
+・Stimulus (JavaScript)  
+・SQLite  
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+## 工夫した点
 
-* Deployment instructions
+・おみくじ結果をDBに保存し履歴として確認できるようにした  
+・UserモデルとOmikujiモデルをuser_idで関連付けた  
+・メールアドレスの重複登録を防ぐバリデーションを実装  
 
-* ...
+---
+
+## 今後追加予定の機能
+
+・1日1回のおみくじ制限  
+・結果のSNSシェア機能  
+・UI / デザインの改善
