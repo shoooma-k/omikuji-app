@@ -138,7 +138,9 @@ class OmikujisController < ApplicationController
 
   def create
     @omikuji = Omikuji.new(omikuji_params)
-    @omikuji.user_id = @current_user.id
+    if @current_user
+      @omikuji.user_id = @current_user.id
+    end
     @omikuji.save
     redirect_to("/omikujis/index")
   end
